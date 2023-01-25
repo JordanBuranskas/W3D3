@@ -6,11 +6,11 @@ def range (start, ending) #1, 7
     new_array = [start] << range(start +1, ending)
     # range(10, 14) # [10, 11, 12, 13]
 
-    [10] << range(11, 14)
-    [10, 11] << range(12, 14)
-    [10, 11, 12] << range(13, 14)
-    [10, 11, 12, 13, []] << range(14, 14)
-    [10, 11, 12, 13, []]
+    # [10] << range(11, 14)
+    # [10, 11] << range(12, 14)
+    # [10, 11, 12] << range(13, 14)
+    # [10, 11, 12, 13, []] << range(14, 14)
+    # [10, 11, 12, 13, []]
 
     new_array.flatten
 
@@ -40,7 +40,6 @@ p expo(3, 3)
 
 
 puts 
-
 puts 
 
 def expo_2(b, n) #(b, n-2)**2
@@ -68,16 +67,29 @@ p expo_2(5, 3)
 # 2nd (2, 2) ex(2, 2/2)**2 ==
 # 3rd (2, 1) ex(2, 1/2)**2 ==
 # 4th ex(2, )
+puts 
+puts 
+puts 
 
 def deep_dup(arr)
+    deep_duped = []
 
+    arr.each do |ele|
+        new_spot = []
+        if ele.is_a?(Array)
+            new_spot += ele 
+        end
+        deep_duped << ele
+    end
+    return deep_duped
 end
-
 
 robot_parts = [
 	["nuts", "bolts", "washers"],
 	["capacitors", "resistors", "inductors"]
   ]
+  p deep_dup(robot_parts)
+
   
 
 
