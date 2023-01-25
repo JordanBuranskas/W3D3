@@ -72,20 +72,21 @@ puts
 puts 
 
 def deep_dup(arr)
+
     deep_duped = []
 
     arr.each do |ele|
-        new_spot = []
-        if ele.is_a?(Array)
-            new_spot += ele 
+		if !ele.is_a?(Array)
+			deep_duped << ele
+		else
+        	deep_duped += [deep_dup(ele)] 
         end
-        deep_duped << ele
     end
     return deep_duped
 end
 
 robot_parts = [
-	["nuts", "bolts", "washers"],
+	["nuts", "bolts", [1,2,3]],
 	["capacitors", "resistors", "inductors"]
   ]
   p deep_dup(robot_parts)
