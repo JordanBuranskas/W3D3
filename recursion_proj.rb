@@ -91,7 +91,24 @@ robot_parts = [
   ]
   p deep_dup(robot_parts)
 
-  
+  puts 
+  puts 
+  puts
+  puts 'Binary Search'
 
+def binary_search(arr, target)
+	return nil if arr.empty?
+	return target if arr.length == 1
 
-
+	median = arr.length / 2
+	left = [arr[0]..arr[median]]
+	right = [arr[median]...arr[-1]]
+	if arr[median] < target
+		binary_search(right, target)
+	else
+		binary_search(left, target)
+	end
+	
+end
+b_arr = [1, 2, 4, 6, 8, 10, 12]
+p binary_search(b_arr, 10)
