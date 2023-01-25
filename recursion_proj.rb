@@ -59,7 +59,7 @@ end
 
 p expo_2(2, 4)
 p expo_2(3, 3)
-p expo_2(5, 4)
+p expo_2(5, 3)
 
 # (2, 4)
 # def expo_2(b, n) #(b, n-2)**2
@@ -68,4 +68,17 @@ p expo_2(5, 4)
 # 2nd (2, 2) ex(2, 2/2)**2 ==
 # 3rd (2, 1) ex(2, 1/2)**2 ==
 # 4th ex(2, )
+
+def deep_dup(arr)
+
+end
+
+
+robot_parts = [
+	["nuts", "bolts", "washers"],
+	["capacitors", "resistors", "inductors"]
+  ]
+  
+
+
 
